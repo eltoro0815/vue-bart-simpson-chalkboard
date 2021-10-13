@@ -1,5 +1,8 @@
 # vue-bart-simpson-chalkboard
 
+LIFE EXAMPLE:
+https://secret-meadow-04667.herokuapp.com/
+
 ## Project setup
 ```
 npm install
