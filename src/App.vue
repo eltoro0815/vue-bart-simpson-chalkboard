@@ -45,7 +45,7 @@ export default {
   data: () => ({
     message: `
       
-  ottos mops
+  OTTOS MOPS
   ottos mops trotzt
   otto: fort mops fort
   ottos mops hopst fort
