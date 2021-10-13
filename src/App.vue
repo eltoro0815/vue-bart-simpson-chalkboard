@@ -32,7 +32,7 @@
         padding: 20px;
       "
     >
-      <textarea v-model="message" style="width: 350px; height: 300px">
+      <textarea v-model="message" style="width: 350px; height: 260px">
       </textarea>
     </div>
   </div>
