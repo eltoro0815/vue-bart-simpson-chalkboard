@@ -16,7 +16,7 @@
         <div
           class="box"
           id="theBox"
-          :style="`font-size: ${fontSize}px; margin-left: ${marginLeft}px; line-height: ${lineHeight}px;`"
+          :style="`font-size: ${fontSize}px; margin-left: ${marginLeft}px; margin-top: ${marginTop}px; line-height: ${lineHeight}px;`"
         >
           {{ message }}
         </div>
@@ -51,7 +51,10 @@
         <input type="range" min="0" max="300" v-model="marginLeft" /> margin
         left: {{ marginLeft }}px
       </p>
-      <!-- <p><button @click="downloadImage">Download Image</button></p> -->
+      <p>
+        <input type="range" min="0" max="300" v-model="marginTop" /> margin
+        top: {{ marginTop }}px
+      </p>
     </div>
   </div>
 </template>
@@ -61,45 +64,27 @@ export default {
   name: "App",
 
   data: () => ({
-    message: `
-      
-  OTTOS MOPS
-  ottos mops trotzt
-  otto: fort mops fort
-  ottos mops hopst fort
-  otto: soso
-  otto holt koks
-  otto holt obst
-  otto horcht
-  otto: mops mops
-  otto hofft
-  ottos mops klopft
-  otto: komm mops komm
-  ottos mops kommt
-  ottos mops kotzt
-  otto: ogottogott`,
+    message: `OTTOS MOPS
+ottos mops trotzt
+otto: fort mops fort
+ottos mops hopst fort
+otto: soso
+otto holt koks
+otto holt obst
+otto horcht
+otto: mops mops
+otto hofft
+ottos mops klopft
+otto: komm mops komm
+ottos mops kommt
+ottos mops kotzt
+otto: ogottogott`,
 
     fontSize: 18,
-    marginLeft: 120,
+    marginLeft: 130,
     lineHeight: 19,
+    marginTop: 40,
   }),
-
-  methods: {
-    // showCaptureRef() {
-    //   console.log(this.$refs.capture);
-    // },
-    // downloadImage() {
-    //   let vc = this;
-    //   let filename = "bart.png";
-    //   html2canvas(vc.showCaptureRef())
-    //     .then((canvas) => {
-    //       vc.saveAs(canvas.toDataURL(), filename);
-    //     })
-    //     .catch((error) => {
-    //       alert("Error descargando el reporte visual");
-    //     });
-    // },
-  },
 };
 </script>
 
