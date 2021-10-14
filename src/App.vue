@@ -2,7 +2,7 @@
   <div class="maincontainer">
     <div
       style="width: 800px; height: 604px; margin-left: 25px; margin-top: 20px"
-      id="widget"
+      ref="capture"
     >
       <img
         src="./assets/bartback.png"
@@ -13,7 +13,11 @@
         class="container"
         style="position: absolute; z-index: 1"
       >
-        <div class="box" id="theBox" style="font-size: 18px">
+        <div
+          class="box"
+          id="theBox"
+          :style="`font-size: ${fontSize}px; margin-left: ${marginLeft}px; line-height: ${lineHeight}px;`"
+        >
           {{ message }}
         </div>
       </section>
@@ -34,6 +38,20 @@
     >
       <textarea v-model="message" style="width: 350px; height: 260px">
       </textarea>
+
+      <p>
+        <input type="range" min="10" max="50" v-model="fontSize" /> font size:
+        {{ fontSize }}px
+      </p>
+      <p>
+        <input type="range" min="10" max="50" v-model="lineHeight" /> line
+        height: {{ lineHeight }}px
+      </p>
+      <p>
+        <input type="range" min="0" max="300" v-model="marginLeft" /> margin
+        left: {{ marginLeft }}px
+      </p>
+      <!-- <p><button @click="downloadImage">Download Image</button></p> -->
     </div>
   </div>
 </template>
@@ -60,7 +78,28 @@ export default {
   ottos mops kommt
   ottos mops kotzt
   otto: ogottogott`,
+
+    fontSize: 18,
+    marginLeft: 120,
+    lineHeight: 19,
   }),
+
+  methods: {
+    // showCaptureRef() {
+    //   console.log(this.$refs.capture);
+    // },
+    // downloadImage() {
+    //   let vc = this;
+    //   let filename = "bart.png";
+    //   html2canvas(vc.showCaptureRef())
+    //     .then((canvas) => {
+    //       vc.saveAs(canvas.toDataURL(), filename);
+    //     })
+    //     .catch((error) => {
+    //       alert("Error descargando el reporte visual");
+    //     });
+    // },
+  },
 };
 </script>
 
@@ -118,10 +157,8 @@ export default {
   height: 100%;
   word-wrap: normal;
   text-wrap: normal;
-  line-height: 19px;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 120px;
   white-space: pre;
 }
 
